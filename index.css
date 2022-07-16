@@ -12,12 +12,16 @@ body {
 }
 
 .cards-holder {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     width: 100vw;
 }
 
 .timezone-card {
-    background-color:rgb(141, 193, 186);
+    margin: 0;
+    padding: 0;
+    background-color:rgb(241, 149, 84);
     position: relative;
     float: left;
     width: 100%;
