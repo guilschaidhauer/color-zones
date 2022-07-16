@@ -19,11 +19,15 @@ function addTimezoneCard() {
     let e = document.getElementById("timezonesSelect");
     let timezoneString = e.value;
 
+    const div = document.createElement("div");
+    div.classList.add("timezone-card");
+
     const paragraph = document.createElement("p");
     paragraph.timezoneName = timezoneString;
-    paragraph.classList.add("timezone-card");
+    paragraph.classList.add("timezone-card-data");
 
-    document.getElementById('timezonesCardHolder').append(paragraph);
+    div.append(paragraph);
+    document.getElementById('timezonesCardHolder').append(div);
 
     timezoneCards.push(paragraph);
 
