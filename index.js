@@ -30,8 +30,21 @@ function addTimezoneCard() {
     document.getElementById('timezonesCardHolder').append(div);
 
     timezoneCards.push(paragraph);
+    adjustTimezoneCardsWidth();
 
     closeForm();
+
+    refreshTime();
+}
+
+function adjustTimezoneCardsWidth() {
+    for (let i=0; i<timezoneCards.length; i++) {
+        timezoneCards[i].parentElement.style.width = getTimezoneCardWidth();
+    }
+}
+
+function getTimezoneCardWidth() {
+    return (100 / timezoneCards.length) + "%";
 }
 
 function openForm() {
