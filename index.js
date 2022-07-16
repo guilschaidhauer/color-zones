@@ -31,9 +31,11 @@ function addTimezoneCard() {
 }
 
 function openForm() {
+    document.getElementById("addTimezoneButton").style.display = "none";
     document.getElementById("myForm").style.display = "block";
 }
 
 function closeForm() {
+    document.getElementById("addTimezoneButton").style.display = "block";
     document.getElementById("myForm").style.display = "none";
 }
