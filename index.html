@@ -9,11 +9,7 @@
         <div class="form-popup" id="myForm">
             <form class="form-container">
                 <label for="timezones">Choose a car:</label>
-                <select name="timezones" id="timezones">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+                <select name="timezones" id="timezonesSelect">
                 </select>
                 <br><br>
                 <button type="button" class="btn" onclick="addTimezoneCard()">Add</button>
@@ -23,6 +19,7 @@
 
         <div id="timezonesCardHolder">
         </div>
+        <script src="timezonesList.js"></script>
         <script src="index.js"></script>
     </body>
 </html>
