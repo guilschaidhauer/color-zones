@@ -1,6 +1,8 @@
 /* The popup form - hidden by default */
 .form-popup {
     display: none;
+    position: absolute;
+    top: 0px;
 }
 
 body {
