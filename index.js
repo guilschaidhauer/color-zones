@@ -21,6 +21,7 @@ function addTimezoneCard() {
 
     const paragraph = document.createElement("p");
     paragraph.timezoneName = timezoneString;
+    paragraph.classList.add("timezone-card");
 
     document.getElementById('timezonesCardHolder').append(paragraph);
 

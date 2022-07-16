@@ -4,9 +4,6 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <button class="float" onclick="openForm()">+</button>
-
-        <br><br>
         <div class="form-popup" id="myForm">
             <form class="form-container">
                 <label for="timezones">Choose a timezone:</label>
@@ -18,8 +15,11 @@
             </form>
         </div>
 
-        <div id="timezonesCardHolder">
+        <div class="cards-holder" id="timezonesCardHolder">
         </div>
+
+        <button class="float" onclick="openForm()">+</button>
+
         <script src="timezonesList.js"></script>
         <script src="index.js"></script>
     </body>
