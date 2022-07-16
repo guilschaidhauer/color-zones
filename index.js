@@ -12,7 +12,7 @@ function refreshTime() {
 setInterval(refreshTime, 1000);
 
 function getTimeString(timezoneName) {
-    return new Date().toLocaleString("en-US", {timeZone: timezoneName});
+    return new Date().toLocaleString("en-US", {timeZone: timezoneName}) + " - " + timezoneName;
 }
 
 function addTimezoneCard() {
