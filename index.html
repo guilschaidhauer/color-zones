@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
     <body>
-        <button onclick="addTimezoneCard()">Add</button>
+        <button onclick="openForm()">Add</button>
+        <br><br>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <label for="cars">Choose a car:</label>
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <br><br>
+                <button type="button" class="btn" onclick="addTimezoneCard()">Add</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+            </form>
+        </div>
+
         <div id="timezonesCardHolder">
         </div>
         <script src="index.js"></script>

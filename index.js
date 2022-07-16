@@ -4,7 +4,7 @@ let timezoneCards = [];
 
 function refreshTime() {
     for (let i=0; i<timezoneCards.length; i++) {
-        let dateString = getTimeString("America/Sao_Paulo");
+        let dateString = getTimeString(timezoneCards[i].timezoneName);
         timezoneCards[i].innerHTML = dateString;
     }
 }
@@ -17,10 +17,19 @@ function getTimeString(timezoneName) {
 
 function addTimezoneCard() {
     const paragraph = document.createElement("p");
-    const node = document.createTextNode(getTimeString());
-    paragraph.appendChild(node);
+    //const node = document.createTextNode(getTimeString());
+    //paragraph.appendChild(node);
+    paragraph.timezoneName = "America/Sao_Paulo";
 
     document.getElementById('timezonesCardHolder').append(paragraph);
 
     timezoneCards.push(paragraph);
+}
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
 }
