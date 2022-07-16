@@ -16,14 +16,17 @@ function getTimeString(timezoneName) {
 }
 
 function addTimezoneCard() {
+    let e = document.getElementById("timezonesSelect");
+    let timezoneString = e.value;
+
     const paragraph = document.createElement("p");
-    //const node = document.createTextNode(getTimeString());
-    //paragraph.appendChild(node);
-    paragraph.timezoneName = "America/Sao_Paulo";
+    paragraph.timezoneName = timezoneString;
 
     document.getElementById('timezonesCardHolder').append(paragraph);
 
     timezoneCards.push(paragraph);
+
+    closeForm();
 }
 
 function openForm() {
