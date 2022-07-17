@@ -43,13 +43,9 @@ body {
 }
 
 .timezone-info {
-    margin: 0;
-    padding: 0;
-    background-color:#ffffff00;
-    position: relative;
-    float: left;
-    overflow: hidden;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     justify-content: center;
 }
