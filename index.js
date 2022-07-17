@@ -12,17 +12,16 @@ function refreshTime() {
 setInterval(refreshTime, 1000);
 
 function getTimeString(timezoneName) {
-    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit', minute:'2-digit'}) + " - " + timezoneName;
+    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit', minute:'2-digit'});
 }
 
 function addTimezoneCard() {
     const div = createTimezoneCardDiv();
-    const paragraph = createTimezoneParagraph();
+    const timeDiv = createTimeDiv();
 
-    div.append(paragraph);
+    div.append(timeDiv );
     document.getElementById('timezonesCardHolder').append(div);
 
-    timezoneCards.push(paragraph);
     adjustTimezoneCardsWidth();
 
     closeForm();
@@ -34,10 +33,18 @@ function getTimezoneString() {
     return document.getElementById("timezonesSelect").value;
 }
 
-function createTimezoneParagraph() {
+function createTimeDiv() {
+    const timeDiv = document.createElement("div");
+    timeDiv.append(createTimeParagraph());
+    timeDiv.classList.add("timezone-card-data");
+    return timeDiv;
+}
+
+function createTimeParagraph() {
     const paragraph = document.createElement("p");
     paragraph.timezoneName = getTimezoneString();
-    paragraph.classList.add("timezone-card-data");
+    paragraph.classList.add("time");
+    timezoneCards.push(paragraph);
     return paragraph;
 }
 
@@ -50,7 +57,7 @@ function createTimezoneCardDiv() {
 
 function adjustTimezoneCardsWidth() {
     for (let i=0; i<timezoneCards.length; i++) {
-        timezoneCards[i].parentElement.style.width = getTimezoneCardWidth();
+        timezoneCards[i].parentElement.parentElement.style.width = getTimezoneCardWidth();
     }
 }
 

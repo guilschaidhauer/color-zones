@@ -34,8 +34,20 @@ body {
     justify-content: center;
 }
 
-.timezone-card-data {
+.time {
     font-size:24px;
+}
+
+.timezone-card-data {
+    margin: 0;
+    padding: 0;
+    background-color:#ffffff00;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .float {
