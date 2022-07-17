@@ -16,15 +16,8 @@ function getTimeString(timezoneName) {
 }
 
 function addTimezoneCard() {
-    let e = document.getElementById("timezonesSelect");
-    let timezoneString = e.value;
-
-    const div = document.createElement("div");
-    div.classList.add("timezone-card");
-
-    const paragraph = document.createElement("p");
-    paragraph.timezoneName = timezoneString;
-    paragraph.classList.add("timezone-card-data");
+    const div = createTimezoneCardDiv();
+    const paragraph = createTimezoneParagraph();
 
     div.append(paragraph);
     document.getElementById('timezonesCardHolder').append(div);
@@ -35,6 +28,23 @@ function addTimezoneCard() {
     closeForm();
 
     refreshTime();
+}
+
+function getTimezoneString() {
+    return document.getElementById("timezonesSelect").value;
+}
+
+function createTimezoneParagraph() {
+    const paragraph = document.createElement("p");
+    paragraph.timezoneName = getTimezoneString();
+    paragraph.classList.add("timezone-card-data");
+    return paragraph;
+}
+
+function createTimezoneCardDiv() {
+    const div = document.createElement("div");
+    div.classList.add("timezone-card");
+    return div;
 }
 
 function adjustTimezoneCardsWidth() {
