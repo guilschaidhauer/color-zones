@@ -44,6 +44,7 @@ function createTimezoneParagraph() {
 function createTimezoneCardDiv() {
     const div = document.createElement("div");
     div.classList.add("timezone-card");
+    div.style.backgroundColor = getTimezoneCardColor();
     return div;
 }
 

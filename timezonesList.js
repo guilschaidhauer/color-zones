@@ -1,4 +1,4 @@
-let timezonesList = [
+const timezonesList = [
   'Asia/Tokyo',
   'Asia/Shanghai',
   'Asia/Hong_Kong',
@@ -16,6 +16,16 @@ let timezonesList = [
   'America/Argentina/Buenos_Aires'
 ];
 
+const timezoneCardColorsList = [
+  '#F7AD79',
+  '#D4687D',
+  '#BD80EB',
+  '#6887D4',
+  '#71F5E2'
+];
+
+let timezoneCardColorsListIndex = 0;
+
 initializeTimezoneList();
 
 function initializeTimezoneList() {
@@ -26,4 +36,15 @@ function initializeTimezoneList() {
         option.text = timezonesList[i];
         timezonesSelect.add(option);
     }
+}
+
+function getTimezoneCardColor() {
+  const color =  timezoneCardColorsList[timezoneCardColorsListIndex];
+  timezoneCardColorsListIndex++;
+
+  if (timezoneCardColorsListIndex >= timezoneCardColorsList.length) {
+    timezoneCardColorsListIndex = 0;
+  }
+
+  return color;
 }
