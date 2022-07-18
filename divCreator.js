@@ -8,6 +8,7 @@ function createTimezoneCardDiv() {
 function createInfoDiv() {
     const infoDiv = document.createElement("div");
     infoDiv.append(createTimeDiv());
+    infoDiv.append(createDateDiv());
     infoDiv.append(createTimezoneNameDiv());
     infoDiv.classList.add("timezone-info");
     return infoDiv;
@@ -24,6 +25,19 @@ function createTimeParagraph() {
     paragraph.timezoneName = getTimezoneString();
     paragraph.classList.add("time");
     timezoneCards.push(paragraph);
+    return paragraph;
+}
+
+function createDateDiv() {
+    const dateDiv = document.createElement("div");
+    dateDiv.append(createDateParagraph());
+    return dateDiv;
+}
+
+function createDateParagraph() {
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = getDateString(getTimezoneString());
+    paragraph.classList.add("date");
     return paragraph;
 }
 

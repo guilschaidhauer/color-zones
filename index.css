@@ -39,6 +39,11 @@ body {
     color: azure;
 }
 
+.date {
+    font-size:24px;
+    color: azure;
+}
+
 .timezone-name {
     font-size:24px;
     color: azure;

@@ -15,6 +15,10 @@ function getTimeString(timezoneName) {
     return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit', minute:'2-digit'});
 }
 
+function getDateString(timezoneName) {
+    return new Date().toLocaleDateString("pt-BR", {timeZone: timezoneName});
+}
+
 function addTimezoneCard() {
     const div = createTimezoneCardDiv();
     const infoDiv = createInfoDiv();
