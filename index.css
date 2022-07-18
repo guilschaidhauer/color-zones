@@ -35,17 +35,25 @@ body {
 }
 
 .time {
-    font-size:24px;
+    font-size:36px;
     color: azure;
+}
+
+.time-div {
+    height: 10vh;
 }
 
 .date {
-    font-size:24px;
+    font-size:20px;
     color: azure;
 }
 
+.date-div {
+
+}
+
 .timezone-name {
-    font-size:24px;
+    font-size:20px;
     color: azure;
 }
 

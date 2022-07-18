@@ -16,6 +16,7 @@ function createInfoDiv() {
 
 function createTimeDiv() {
     const timeDiv = document.createElement("div");
+    timeDiv.classList.add("time-div");
     timeDiv.append(createTimeParagraph());
     return timeDiv;
 }
@@ -30,6 +31,7 @@ function createTimeParagraph() {
 
 function createDateDiv() {
     const dateDiv = document.createElement("div");
+    dateDiv.classList.add("date-div");
     dateDiv.append(createDateParagraph());
     return dateDiv;
 }
