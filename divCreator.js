@@ -2,6 +2,7 @@ function createTimezoneCardDiv() {
     const div = document.createElement("div");
     div.classList.add("timezone-card");
     div.style.backgroundColor = getTimezoneCardColor();
+    div.append(createInfoDiv());
     return div;
 }
 
@@ -10,6 +11,8 @@ function createInfoDiv() {
     infoDiv.append(createTimeDiv());
     infoDiv.append(createDateDiv());
     infoDiv.append(createTimezoneNameDiv());
+    infoDiv.append(createDeleteButtonDiv());
+
     infoDiv.classList.add("timezone-info");
     return infoDiv;
 }
@@ -54,4 +57,22 @@ function createTimezoneNameParagraph() {
     paragraph.innerHTML = formatTimezoneName(timezoneCards[timezoneCards.length-1].timezoneName);
     paragraph.classList.add("timezone-name");
     return paragraph;
+}
+
+function createDeleteButtonDiv() {
+    const deleteButtonDiv = document.createElement("div");
+    deleteButtonDiv.append(createDeleteButton());
+    return deleteButtonDiv;
+}
+
+function createDeleteButton() {
+    const button = document.createElement("button");
+    button.innerHTML = "X";
+
+    button.timezoneCardsIndex = timezoneCards.length-1;
+    
+    button.onclick = function() {
+        removeTimeZoneCard(this);
+    };
+    return button;
 }

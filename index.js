@@ -21,9 +21,7 @@ function getDateString(timezoneName) {
 
 function addTimezoneCard() {
     const div = createTimezoneCardDiv();
-    const infoDiv = createInfoDiv();
-
-    div.append(infoDiv);
+ 
     document.getElementById('timezonesCardHolder').append(div);
 
     adjustTimezoneCardsWidth();
@@ -31,6 +29,12 @@ function addTimezoneCard() {
     closeForm();
 
     refreshTime();
+}
+
+function removeTimeZoneCard(button) {
+    timezoneCards.splice(button.timezoneCardsIndex, 1);
+    button.parentElement.parentElement.parentElement.remove();
+    adjustTimezoneCardsWidth();
 }
 
 function getTimezoneString() {
