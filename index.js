@@ -5,8 +5,12 @@ let timezoneCards = [];
 function refreshTime() {
     for (let i=0; i<timezoneCards.length; i++) {
         let dateString = getTimeString(timezoneCards[i].timezoneName);
-        timezoneCards[i].innerHTML = dateString;
+        getTimeParagraph(timezoneCards[i]).innerHTML = dateString;
     }
+}
+
+function getTimeParagraph(div) {
+    return div.querySelector(".time");
 }
 
 setInterval(refreshTime, 1000);
@@ -32,8 +36,15 @@ function addTimezoneCard() {
 }
 
 function removeTimeZoneCard(button) {
-    timezoneCards.splice(button.timezoneCardsIndex, 1);
-    button.parentElement.parentElement.parentElement.remove();
+    const timezoneCard = button.parentElement.parentElement.parentElement;
+
+    for(var i=0; i<timezoneCards.length; i++){ 
+        if (timezoneCards[i] === timezoneCard) { 
+            timezoneCards.splice(i, 1); 
+        }
+    }
+
+    timezoneCard.remove();
     adjustTimezoneCardsWidth();
 }
 
@@ -43,7 +54,7 @@ function getTimezoneString() {
 
 function adjustTimezoneCardsWidth() {
     for (let i=0; i<timezoneCards.length; i++) {
-        timezoneCards[i].parentElement.parentElement.parentElement.style.width = getTimezoneCardWidth();
+        timezoneCards[i].style.width = getTimezoneCardWidth();
     }
 }
 

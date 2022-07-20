@@ -1,8 +1,11 @@
 function createTimezoneCardDiv() {
     const div = document.createElement("div");
+    div.timezoneName = getTimezoneString();
+    timezoneCards.push(div);
     div.classList.add("timezone-card");
     div.style.backgroundColor = getTimezoneCardColor();
     div.append(createInfoDiv());
+
     return div;
 }
 
@@ -26,9 +29,7 @@ function createTimeDiv() {
 
 function createTimeParagraph() {
     const paragraph = document.createElement("p");
-    paragraph.timezoneName = getTimezoneString();
     paragraph.classList.add("time");
-    timezoneCards.push(paragraph);
     return paragraph;
 }
 
@@ -68,8 +69,6 @@ function createDeleteButtonDiv() {
 function createDeleteButton() {
     const button = document.createElement("button");
     button.innerHTML = "X";
-
-    button.timezoneCardsIndex = timezoneCards.length-1;
     
     button.onclick = function() {
         removeTimeZoneCard(this);
