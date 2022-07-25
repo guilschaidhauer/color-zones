@@ -48,8 +48,22 @@ body {
     color: azure;
 }
 
-.date-div {
+.hours {
+    font-size:36px;
+    color: azure;
+    display: inline-block;
+}
 
+.minutes {
+    font-size:36px;
+    color: azure;
+    display: inline-block;
+}
+
+.colon {
+    font-size:36px;
+    color: azure;
+    display: inline-block;
 }
 
 .timezone-name {

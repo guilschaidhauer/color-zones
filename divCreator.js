@@ -24,20 +24,28 @@ function createTimeDiv() {
     const timeDiv = document.createElement("div");
     timeDiv.classList.add("time-div");
     timeDiv.append(createHoursDiv());
+    timeDiv.append(createColonDiv());
     timeDiv.append(createMinutesDiv());
     return timeDiv;
 }
 
-function createHoursDiv () {
+function createHoursDiv() {
     const hoursDiv = document.createElement("div");
     hoursDiv.classList.add("hours");
     return hoursDiv;
 }
 
-function createMinutesDiv () {
+function createMinutesDiv() {
     const minutesDiv = document.createElement("div");
     minutesDiv.classList.add("minutes");
     return minutesDiv;
+}
+
+function createColonDiv() {
+    const colonDiv = document.createElement("div");
+    colonDiv.innerHTML = ":";
+    colonDiv.classList.add("colon");
+    return colonDiv;
 }
 
 function createDateDiv() {
