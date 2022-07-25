@@ -20,8 +20,8 @@ function getMinutesDiv(div) {
     return div.querySelector(".minutes");
 }
 
-function getTimeParagraph(div) {
-    return div.querySelector(".time");
+function getDateString(timezoneName) {
+    return new Date().toLocaleDateString("pt-BR", {timeZone: timezoneName});
 }
 
 setInterval(refreshTime, 1000);
