@@ -4,9 +4,20 @@ let timezoneCards = [];
 
 function refreshTime() {
     for (let i=0; i<timezoneCards.length; i++) {
-        let dateString = getTimeString(timezoneCards[i].timezoneName);
-        getTimeParagraph(timezoneCards[i]).innerHTML = dateString;
+        const hoursString = getHoursString(timezoneCards[i].timezoneName);
+        const minutesString = getMinutesString(timezoneCards[i].timezoneName);
+
+        getHoursDiv(timezoneCards[i]).innerHTML = hoursString;
+        getMinutesDiv(timezoneCards[i]).innerHTML = minutesString;
     }
+}
+
+function getHoursDiv(div) {
+    return div.querySelector(".hours");
+}
+
+function getMinutesDiv(div) {
+    return div.querySelector(".minutes");
 }
 
 function getTimeParagraph(div) {
@@ -15,12 +26,12 @@ function getTimeParagraph(div) {
 
 setInterval(refreshTime, 1000);
 
-function getTimeString(timezoneName) {
-    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit', minute:'2-digit'});
+function getHoursString(timezoneName) {
+    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit'});
 }
 
-function getDateString(timezoneName) {
-    return new Date().toLocaleDateString("pt-BR", {timeZone: timezoneName});
+function getMinutesString(timezoneName) {
+    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, minute: '2-digit'});
 }
 
 function addTimezoneCard() {
