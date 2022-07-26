@@ -4,19 +4,29 @@ let timezoneCards = [];
 
 let isLiveTime = true;
 
-let timeOffsetInSeconds = 3600;
+let wheelIsFree = true;
+
+let timeOffsetInSeconds = 0;
 
 function refreshTime() {
     if (isLiveTime) {
-        for (let i=0; i<timezoneCards.length; i++) {
-            const date = getDateObject(timezoneCards[i].timezoneName);
-            const hoursString = getHoursString(date);
-            const minutesString = getMinutesString(date);
-    
-            getHoursDiv(timezoneCards[i]).innerHTML = hoursString;
-            getMinutesDiv(timezoneCards[i]).innerHTML = minutesString;
-        }
+        refreshTimeForAllCards();
     }
+}
+
+function refreshTimeForAllCards() {
+    for (let i=0; i<timezoneCards.length; i++) {
+        refreshTimeForCard(timezoneCards[i]);
+    }
+}
+
+function refreshTimeForCard(timezoneCard) {
+    const date = getDateObject(timezoneCard.timezoneName);
+    const hoursString = getHoursString(date);
+    const minutesString = getMinutesString(date);
+
+    getHoursDiv(timezoneCard).innerHTML = hoursString;
+    getMinutesDiv(timezoneCard).innerHTML = minutesString;
 }
 
 function getHoursDiv(div) {
@@ -73,3 +83,16 @@ function closeForm() {
     document.getElementById("addTimezoneButton").style.display = "block";
     document.getElementById("myForm").style.display = "none";
 }
+
+addEventListener('wheel', (event) => {
+    if (wheelIsFree && event.wheelDeltaY < -49) {
+        console.log(event.wheelDeltaY);
+        isLiveTime = false;
+        wheelIsFree = false;
+
+        timeOffsetInSeconds += 3600;
+
+        refreshTimeForAllCards();
+        setTimeout(function() { isFree = true }, 250);
+    }
+});
