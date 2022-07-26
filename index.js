@@ -9,8 +9,9 @@ let timeOffsetInSeconds = 3600;
 function refreshTime() {
     if (isLiveTime) {
         for (let i=0; i<timezoneCards.length; i++) {
-            const hoursString = getHoursString(timezoneCards[i].timezoneName);
-            const minutesString = getMinutesString(timezoneCards[i].timezoneName);
+            const date = getDateObject(timezoneCards[i].timezoneName);
+            const hoursString = getHoursString(date);
+            const minutesString = getMinutesString(date);
     
             getHoursDiv(timezoneCards[i]).innerHTML = hoursString;
             getMinutesDiv(timezoneCards[i]).innerHTML = minutesString;
@@ -50,12 +51,12 @@ function getDateObject(timezoneName) {
     return dateWithOffset;
 }
 
-function getHoursString(timezoneName) {
-    return getDateObject(timezoneName).toLocaleString("pt-BR", {hour: '2-digit'});
+function getHoursString(date) {
+    return date.toLocaleString("pt-BR", {hour: '2-digit'});
 }
 
-function getMinutesString(timezoneName) {
-    return getDateObject(timezoneName).toLocaleTimeString("pt-BR", {timeZone: timezoneName, minute: '2-digit'});
+function getMinutesString(date) {
+    return date.toLocaleTimeString("pt-BR", {minute: '2-digit'});
 }
 
 function addTimezoneCard() {
