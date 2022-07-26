@@ -2,13 +2,19 @@ let timeDisplay = document.getElementById("time");
 
 let timezoneCards = [];
 
-function refreshTime() {
-    for (let i=0; i<timezoneCards.length; i++) {
-        const hoursString = getHoursString(timezoneCards[i].timezoneName);
-        const minutesString = getMinutesString(timezoneCards[i].timezoneName);
+let isLiveTime = true;
 
-        getHoursDiv(timezoneCards[i]).innerHTML = hoursString;
-        getMinutesDiv(timezoneCards[i]).innerHTML = minutesString;
+let timeOffsetInSeconds = 3600;
+
+function refreshTime() {
+    if (isLiveTime) {
+        for (let i=0; i<timezoneCards.length; i++) {
+            const hoursString = getHoursString(timezoneCards[i].timezoneName);
+            const minutesString = getMinutesString(timezoneCards[i].timezoneName);
+    
+            getHoursDiv(timezoneCards[i]).innerHTML = hoursString;
+            getMinutesDiv(timezoneCards[i]).innerHTML = minutesString;
+        }
     }
 }
 
@@ -27,7 +33,17 @@ function getDateString(timezoneName) {
 setInterval(refreshTime, 1000);
 
 function getHoursString(timezoneName) {
-    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit'});
+    const originalDateString = new Date().toLocaleString("en-US", {timeZone: timezoneName}); 
+    const parsedOriginalDate = Date.parse(originalDateString);
+    const originalDate = new Date(parsedOriginalDate);
+
+    const originalDateInMs = originalDate.getTime();
+
+    const dateWithOffsetInMs = originalDateInMs + (timeOffsetInSeconds * 1000);
+
+    const dateWithOffset = new Date(dateWithOffsetInMs);
+
+    return dateWithOffset.toLocaleString("pt-BR", {hour: '2-digit'});
 }
 
 function getMinutesString(timezoneName) {
