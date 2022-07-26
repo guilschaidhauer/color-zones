@@ -32,22 +32,30 @@ function getDateString(timezoneName) {
 
 setInterval(refreshTime, 1000);
 
-function getHoursString(timezoneName) {
+function getDateObject(timezoneName) {
+    // Create original date "Date" object
     const originalDateString = new Date().toLocaleString("en-US", {timeZone: timezoneName}); 
     const parsedOriginalDate = Date.parse(originalDateString);
     const originalDate = new Date(parsedOriginalDate);
 
+    if (isLiveTime) {
+        return originalDate;
+    }
+
+    // Add offset to time
     const originalDateInMs = originalDate.getTime();
-
     const dateWithOffsetInMs = originalDateInMs + (timeOffsetInSeconds * 1000);
-
     const dateWithOffset = new Date(dateWithOffsetInMs);
 
-    return dateWithOffset.toLocaleString("pt-BR", {hour: '2-digit'});
+    return dateWithOffset;
+}
+
+function getHoursString(timezoneName) {
+    return getDateObject(timezoneName).toLocaleString("pt-BR", {hour: '2-digit'});
 }
 
 function getMinutesString(timezoneName) {
-    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, minute: '2-digit'});
+    return getDateObject(timezoneName).toLocaleTimeString("pt-BR", {timeZone: timezoneName, minute: '2-digit'});
 }
 
 function addTimezoneCard() {
