@@ -92,3 +92,18 @@ body {
 	text-align:center;
     font-size: 50px;
 }
+
+.reset-time {
+    display: none;
+    letter-spacing: 0.6px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    justify-items: center;
+}

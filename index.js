@@ -8,6 +8,8 @@ let wheelIsFree = true;
 
 let timeOffsetInSeconds = 0;
 
+const timeResetButton = document.getElementById("timeResetButton");
+
 function refreshTime() {
     if (isLiveTime) {
         refreshTimeForAllCards();
@@ -47,8 +49,7 @@ function addTimezoneCard() {
     adjustTimezoneCardsWidth();
 
     closeForm();
-
-    refreshTime();
+    resetTime();
 }
 
 function removeTimeZoneCard(button) {
@@ -99,5 +100,16 @@ function addTimeOffset(offsetInSeconds) {
     timeOffsetInSeconds += offsetInSeconds;
 
     refreshTimeForAllCards();
-    setTimeout(function() { wheelIsFree = true }, 250);
+    setTimeout(function() { 
+        wheelIsFree = true; 
+    }, 250);
+
+    timeResetButton.style.display = "grid";
 }
+
+function resetTime() {
+    timeOffsetInSeconds = 0;
+    isLiveTime = true;
+    timeResetButton.style.display = "none";
+    refreshTime();
+} 
