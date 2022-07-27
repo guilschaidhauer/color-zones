@@ -86,13 +86,18 @@ function closeForm() {
 
 addEventListener('wheel', (event) => {
     if (wheelIsFree && event.wheelDeltaY < -49) {
-        console.log(event.wheelDeltaY);
-        isLiveTime = false;
-        wheelIsFree = false;
-
-        timeOffsetInSeconds += 3600;
-
-        refreshTimeForAllCards();
-        setTimeout(function() { isFree = true }, 250);
+        addTimeOffset(3600);
+    } else if (wheelIsFree && event.wheelDeltaY > 49) {
+        addTimeOffset(-3600);
     }
 });
+
+function addTimeOffset(offsetInSeconds) {
+    isLiveTime = false;
+    wheelIsFree = false;
+
+    timeOffsetInSeconds += offsetInSeconds;
+
+    refreshTimeForAllCards();
+    setTimeout(function() { wheelIsFree = true }, 250);
+}
