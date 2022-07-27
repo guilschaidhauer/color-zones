@@ -23,14 +23,29 @@ function createInfoDiv() {
 function createTimeDiv() {
     const timeDiv = document.createElement("div");
     timeDiv.classList.add("time-div");
-    timeDiv.append(createTimeParagraph());
+    timeDiv.append(createHoursDiv());
+    timeDiv.append(createColonDiv());
+    timeDiv.append(createMinutesDiv());
     return timeDiv;
 }
 
-function createTimeParagraph() {
-    const paragraph = document.createElement("p");
-    paragraph.classList.add("time");
-    return paragraph;
+function createHoursDiv() {
+    const hoursDiv = document.createElement("div");
+    hoursDiv.classList.add("hours");
+    return hoursDiv;
+}
+
+function createMinutesDiv() {
+    const minutesDiv = document.createElement("div");
+    minutesDiv.classList.add("minutes");
+    return minutesDiv;
+}
+
+function createColonDiv() {
+    const colonDiv = document.createElement("div");
+    colonDiv.innerHTML = ":";
+    colonDiv.classList.add("colon");
+    return colonDiv;
 }
 
 function createDateDiv() {

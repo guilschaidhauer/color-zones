@@ -2,26 +2,44 @@ let timeDisplay = document.getElementById("time");
 
 let timezoneCards = [];
 
+let isLiveTime = true;
+
+let wheelIsFree = true;
+
+let timeOffsetInSeconds = 0;
+
+const timeResetButton = document.getElementById("timeResetButton");
+
 function refreshTime() {
-    for (let i=0; i<timezoneCards.length; i++) {
-        let dateString = getTimeString(timezoneCards[i].timezoneName);
-        getTimeParagraph(timezoneCards[i]).innerHTML = dateString;
+    if (isLiveTime) {
+        refreshTimeForAllCards();
     }
 }
 
-function getTimeParagraph(div) {
-    return div.querySelector(".time");
+function refreshTimeForAllCards() {
+    for (let i=0; i<timezoneCards.length; i++) {
+        refreshTimeForCard(timezoneCards[i]);
+    }
+}
+
+function refreshTimeForCard(timezoneCard) {
+    const date = getDateObject(timezoneCard.timezoneName);
+    const hoursString = getHoursString(date);
+    const minutesString = getMinutesString(date);
+
+    getHoursDiv(timezoneCard).innerHTML = hoursString;
+    getMinutesDiv(timezoneCard).innerHTML = minutesString;
+}
+
+function getHoursDiv(div) {
+    return div.querySelector(".hours");
+}
+
+function getMinutesDiv(div) {
+    return div.querySelector(".minutes");
 }
 
 setInterval(refreshTime, 1000);
-
-function getTimeString(timezoneName) {
-    return new Date().toLocaleString("pt-BR", {timeZone: timezoneName, hour: '2-digit', minute:'2-digit'});
-}
-
-function getDateString(timezoneName) {
-    return new Date().toLocaleDateString("pt-BR", {timeZone: timezoneName});
-}
 
 function addTimezoneCard() {
     const div = createTimezoneCardDiv();
@@ -31,8 +49,7 @@ function addTimezoneCard() {
     adjustTimezoneCardsWidth();
 
     closeForm();
-
-    refreshTime();
+    resetTime();
 }
 
 function removeTimeZoneCard(button) {
@@ -46,10 +63,6 @@ function removeTimeZoneCard(button) {
 
     timezoneCard.remove();
     adjustTimezoneCardsWidth();
-}
-
-function getTimezoneString() {
-    return document.getElementById("timezonesSelect").value;
 }
 
 function adjustTimezoneCardsWidth() {
@@ -71,3 +84,32 @@ function closeForm() {
     document.getElementById("addTimezoneButton").style.display = "block";
     document.getElementById("myForm").style.display = "none";
 }
+
+addEventListener('wheel', (event) => {
+    if (wheelIsFree && event.wheelDeltaY < -49) {
+        addTimeOffset(3600);
+    } else if (wheelIsFree && event.wheelDeltaY > 49) {
+        addTimeOffset(-3600);
+    }
+});
+
+function addTimeOffset(offsetInSeconds) {
+    isLiveTime = false;
+    wheelIsFree = false;
+
+    timeOffsetInSeconds += offsetInSeconds;
+
+    refreshTimeForAllCards();
+    setTimeout(function() { 
+        wheelIsFree = true; 
+    }, 250);
+
+    timeResetButton.style.display = "grid";
+}
+
+function resetTime() {
+    timeOffsetInSeconds = 0;
+    isLiveTime = true;
+    timeResetButton.style.display = "none";
+    refreshTime();
+} 
