@@ -17,11 +17,30 @@ const timezonesList = [
 ];
 
 const timezoneCardColorsList = [
-  '#F7AD79',
-  '#D4687D',
-  '#BD80EB',
-  '#6887D4',
-  '#71F5E2'
+  '#120d29',
+  '#071117',
+  '#060d1a',
+  '#061021',
+  '#0e1f33',
+  '#2d5863',
+  '#2f8991',
+  '#70b8ba',
+  '#a3ccc0',
+  '#cedbc5',
+  '#edeabb',
+  '#f5e695',
+  '#f7e58b',
+  '#f7cf77',
+  '#f7c383',
+  '#f0a46e',
+  '#cc8672',
+  '#996778',
+  '#69497a',
+  '#55406e',
+  '#1b0f38',
+  '#13082e',
+  '#110c2b',
+  '#16112e'
 ];
 
 let timezoneCardColorsListIndex = 0;
