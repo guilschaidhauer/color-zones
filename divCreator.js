@@ -3,7 +3,6 @@ function createTimezoneCardDiv() {
     div.timezoneName = getTimezoneString();
     timezoneCards.push(div);
     div.classList.add("timezone-card");
-    div.style.backgroundColor = getTimezoneCardColor();
     div.append(createInfoDiv());
 
     return div;

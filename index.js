@@ -27,6 +27,8 @@ function refreshTimeForCard(timezoneCard) {
     const hoursString = getHoursString(date);
     const minutesString = getMinutesString(date);
 
+    timezoneCard.style.backgroundColor = timezoneCardColorsList[hoursString - 1];
+
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
 }
