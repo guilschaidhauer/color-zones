@@ -1,6 +1,6 @@
-function createTimezoneCardDiv() {
+function createTimezoneCardDiv(timezoneName) {
     const div = document.createElement("div");
-    div.timezoneName = getTimezoneString();
+    div.timezoneName = timezoneName;
     timezoneCards.push(div);
     div.classList.add("timezone-card");
     div.append(createInfoDiv());

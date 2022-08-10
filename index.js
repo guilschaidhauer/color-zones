@@ -44,7 +44,13 @@ function getMinutesDiv(div) {
 setInterval(refreshTime, 1000);
 
 function addTimezoneCard() {
-    const div = createTimezoneCardDiv();
+    const timezoneString = getTimezoneString();
+    addTimezoneToSavedTimezones(timezoneString);
+    createTimezoneCard(timezoneString);
+}
+
+function createTimezoneCard(timezoneName) {
+    const div = createTimezoneCardDiv(timezoneName);
  
     document.getElementById('timezonesCardHolder').append(div);
 
