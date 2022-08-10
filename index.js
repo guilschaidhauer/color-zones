@@ -10,6 +10,10 @@ let timeOffsetInSeconds = 0;
 
 const timeResetButton = document.getElementById("timeResetButton");
 
+setInterval(refreshTime, 1000);
+
+loadSettings();
+
 function refreshTime() {
     if (isLiveTime) {
         refreshTimeForAllCards();
@@ -27,6 +31,8 @@ function refreshTimeForCard(timezoneCard) {
     const hoursString = getHoursString(date);
     const minutesString = getMinutesString(date);
 
+    timezoneCard.style.backgroundColor = timezoneCardColorsList[hoursString - 1];
+
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
 }
@@ -39,10 +45,14 @@ function getMinutesDiv(div) {
     return div.querySelector(".minutes");
 }
 
-setInterval(refreshTime, 1000);
-
 function addTimezoneCard() {
-    const div = createTimezoneCardDiv();
+    const timezoneString = getTimezoneString();
+    addTimezoneToSavedTimezones(timezoneString);
+    createTimezoneCard(timezoneString);
+}
+
+function createTimezoneCard(timezoneName) {
+    const div = createTimezoneCardDiv(timezoneName);
  
     document.getElementById('timezonesCardHolder').append(div);
 
@@ -61,6 +71,7 @@ function removeTimeZoneCard(button) {
         }
     }
 
+    removeTimezoneFromSavedTimezones(timezoneCard.timezoneName);
     timezoneCard.remove();
     adjustTimezoneCardsWidth();
 }
