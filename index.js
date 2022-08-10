@@ -71,6 +71,7 @@ function removeTimeZoneCard(button) {
         }
     }
 
+    removeTimezoneFromSavedTimezones(timezoneCard.timezoneName);
     timezoneCard.remove();
     adjustTimezoneCardsWidth();
 }

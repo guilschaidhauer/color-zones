@@ -13,9 +13,19 @@ function addTimezoneToSavedTimezones(timezoneName) {
 
     savedTimezones.push(timezoneName);
 
-    const string = JSON.stringify(savedTimezones);
+    parseAndSaveTimezonesArray(savedTimezones);
+}
 
-    localStorage.setItem('savedTimezones', string);
+function removeTimezoneFromSavedTimezones(timezoneName) {
+    let savedTimezones = getSavedTimezones();
+
+    for(var i=0; i<savedTimezones.length; i++){ 
+        if (savedTimezones[i] === timezoneName) { 
+            savedTimezones.splice(i, 1); 
+        }
+    }
+
+    parseAndSaveTimezonesArray(savedTimezones);
 }
 
 function getSavedTimezones() {
@@ -29,4 +39,10 @@ function getSavedTimezones() {
     }
 
     return savedTimezones;
+}
+
+function parseAndSaveTimezonesArray(timezones) {
+    const string = JSON.stringify(timezones);
+
+    localStorage.setItem('savedTimezones', string);
 }
