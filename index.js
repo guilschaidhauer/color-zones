@@ -10,6 +10,10 @@ let timeOffsetInSeconds = 0;
 
 const timeResetButton = document.getElementById("timeResetButton");
 
+setInterval(refreshTime, 1000);
+
+loadSettings();
+
 function refreshTime() {
     if (isLiveTime) {
         refreshTimeForAllCards();
@@ -40,8 +44,6 @@ function getHoursDiv(div) {
 function getMinutesDiv(div) {
     return div.querySelector(".minutes");
 }
-
-setInterval(refreshTime, 1000);
 
 function addTimezoneCard() {
     const timezoneString = getTimezoneString();

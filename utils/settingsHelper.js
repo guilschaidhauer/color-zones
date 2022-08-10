@@ -1,8 +1,24 @@
-let savedTimezones = localStorage.getItem('savedTimezones');
+//let savedTimezones = localStorage.getItem('savedTimezones');
 
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
+function loadSettings() {
+    let savedTimezones = getSavedTimezones();
+
+    for (let i=0; i<savedTimezones.length; i++) {
+        createTimezoneCard(savedTimezones[i]);
+    }
+}
 
 function addTimezoneToSavedTimezones(timezoneName) {
+    let savedTimezones = getSavedTimezones();
+
+    savedTimezones.push(timezoneName);
+
+    const string = JSON.stringify(savedTimezones);
+
+    localStorage.setItem('savedTimezones', string);
+}
+
+function getSavedTimezones() {
     let savedTimezonesString = localStorage.getItem('savedTimezones');
     let savedTimezones;
 
@@ -12,9 +28,5 @@ function addTimezoneToSavedTimezones(timezoneName) {
         savedTimezones = JSON.parse(savedTimezonesString);
     }
 
-    savedTimezones.push(timezoneName);
-
-    const string = JSON.stringify(savedTimezones);
-
-    localStorage.setItem('savedTimezones', string);
+    return savedTimezones;
 }
