@@ -82,6 +82,7 @@ function createDeleteButtonDiv() {
 
 function createDeleteButton() {
     const button = document.createElement("button");
+    button.classList.add("remove-button");
     button.innerHTML = "X";
     
     button.onclick = function() {
