@@ -31,10 +31,22 @@ function refreshTimeForCard(timezoneCard) {
     const hoursString = getHoursString(date);
     const minutesString = getMinutesString(date);
 
-    timezoneCard.style.backgroundColor = timezoneCardColorsList[hoursString - 1];
+    const colorIndex = getColorIndex(hoursString);
+
+    timezoneCard.style.backgroundColor = timezoneCardColorsList[colorIndex];
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
+}
+
+function getColorIndex(hoursString) {
+    let colorIndex = hoursString - 1;
+
+    if (colorIndex === -1) {
+        colorIndex = 23;
+    }
+
+    return colorIndex;
 }
 
 function getHoursDiv(div) {
