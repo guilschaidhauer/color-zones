@@ -40,7 +40,7 @@ body {
 }
 
 .time-div {
-    height: 10vh;
+    height: 8vh;
 }
 
 .date {
@@ -49,19 +49,20 @@ body {
 }
 
 .hours {
-    font-size:36px;
+    font-size:40px;
+    font-weight: bold;
     color: azure;
     display: inline-block;
 }
 
 .minutes {
-    font-size:36px;
+    font-size:40px;
     color: azure;
     display: inline-block;
 }
 
 .colon {
-    font-size:36px;
+    font-size:40px;
     color: azure;
     display: inline-block;
 }
