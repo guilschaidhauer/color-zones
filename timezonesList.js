@@ -94,8 +94,6 @@ const timezoneCardColorsList = [
   }
 ];
 
-let timezoneCardColorsListIndex = 0;
-
 initializeTimezoneList();
 
 function initializeTimezoneList() {
@@ -106,15 +104,4 @@ function initializeTimezoneList() {
         option.text = timezonesList[i];
         timezonesSelect.add(option);
     }
-}
-
-function getTimezoneCardColor() {
-  const color =  timezoneCardColorsList[timezoneCardColorsListIndex];
-  timezoneCardColorsListIndex++;
-
-  if (timezoneCardColorsListIndex >= timezoneCardColorsList.length) {
-    timezoneCardColorsListIndex = 0;
-  }
-
-  return color;
 }
