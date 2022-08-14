@@ -32,8 +32,15 @@ function refreshTimeForCard(timezoneCard) {
     const minutesString = getMinutesString(date);
 
     const colorIndex = getColorIndex(hoursString);
+    const colorObject = timezoneCardColorsList[colorIndex];
 
-    timezoneCard.style.backgroundColor = timezoneCardColorsList[colorIndex].color;
+    if (colorObject.white) {
+        timezoneCard.childNodes[0].classList.replace("timezone-info-dark", "timezone-info");
+    } else {
+        timezoneCard.childNodes[0].classList.add("timezone-info", "timezone-info-dark");
+    }
+
+    timezoneCard.style.backgroundColor = colorObject.color;
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;

@@ -81,6 +81,15 @@ body {
     justify-content: center;
 }
 
+.timezone-info-dark {
+    display: flex;
+    color: #393f3f;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
 .float {
 	position: absolute;
     top: 20px;
