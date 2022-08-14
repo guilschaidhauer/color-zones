@@ -47,11 +47,11 @@ const timezonesList = [
     },
     {
       color: '#70b8ba',
-      white: true
+      white: false
     },
     {
       color: '#a3ccc0',
-      white: true
+      white: false
     },
     {
       color: '#cedbc5',
