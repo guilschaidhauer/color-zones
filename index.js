@@ -75,7 +75,7 @@ function createTimezoneCard(timezoneName) {
 }
 
 function removeTimeZoneCard(button) {
-    const timezoneCard = button.parentElement.parentElement.parentElement;
+    const timezoneCard = button.parentElement.parentElement;
 
     for(var i=0; i<timezoneCards.length; i++){ 
         if (timezoneCards[i] === timezoneCard) { 
