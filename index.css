@@ -116,6 +116,15 @@ body {
     outline: none;
     width: 100%;
     position: absolute;
-    bottom: 20px;
+    bottom: 90px;
     justify-items: center;
+}
+
+.reset-time-button {
+    background-color:azure;
+    color:#BD80EB;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
 }
