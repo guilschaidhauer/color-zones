@@ -33,7 +33,7 @@ function refreshTimeForCard(timezoneCard) {
 
     const colorIndex = getColorIndex(hoursString);
 
-    timezoneCard.style.backgroundColor = timezoneCardColorsList[colorIndex];
+    timezoneCard.style.backgroundColor = timezoneCardColorsList[colorIndex].color;
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;

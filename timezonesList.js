@@ -17,30 +17,81 @@ const timezonesList = [
 ];
 
 const timezoneCardColorsList = [
-  '#120d29',
-  '#071117',
-  '#060d1a',
-  '#061021',
-  '#0e1f33',
-  '#2d5863',
-  '#2f8991',
-  '#70b8ba',
-  '#a3ccc0',
-  '#cedbc5',
-  '#edeabb',
-  '#f5e695',
-  '#f7e58b',
-  '#f7cf77',
-  '#f7c383',
-  '#f0a46e',
-  '#cc8672',
-  '#996778',
-  '#69497a',
-  '#55406e',
-  '#1b0f38',
-  '#13082e',
-  '#110c2b',
-  '#16112e'
+  {
+    color: '#120d29'
+  },
+  {
+    color: '#120d29'
+  },
+  {
+    color: '#071117'
+  },
+  {
+    color: '#060d1a'
+  },
+  {
+    color: '#061021'
+  },
+  {
+    color: '#0e1f33'
+  },
+  {
+    color: '#2d5863'
+  },
+  {
+    color: '#2f8991'
+  },
+  {
+    color: '#70b8ba'
+  },
+  {
+    color: '#a3ccc0'
+  },
+  {
+    color: '#cedbc5'
+  },
+  {
+    color: '#edeabb'
+  },
+  {
+    color: '#f5e695'
+  },
+  {
+    color: '#f7e58b'
+  },
+  {
+    color: '#f7cf77'
+  },
+  {
+    color: '#f7c383'
+  },
+  {
+    color: '#f0a46e'
+  },
+  {
+    color: '#cc8672'
+  },
+  {
+    color: '#996778'
+  },
+  {
+    color: '#69497a'
+  },
+  {
+    color: '#55406e'
+  },
+  {
+    color: '#1b0f38'
+  },
+  {
+    color: '#13082e'
+  },
+  {
+    color: '#110c2b'
+  },
+  {
+    color: '#16112e'
+  }
 ];
 
 let timezoneCardColorsListIndex = 0;
