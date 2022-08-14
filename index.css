@@ -45,35 +45,36 @@ body {
 
 .date {
     font-size:20px;
-    color: azure;
+    color: inherit;
 }
 
 .hours {
     font-size:40px;
     font-weight: bold;
-    color: azure;
+    color: inherit;
     display: inline-block;
 }
 
 .minutes {
     font-size:40px;
-    color: azure;
+    color: inherit;
     display: inline-block;
 }
 
 .colon {
     font-size:40px;
-    color: azure;
+    color: inherit;
     display: inline-block;
 }
 
 .timezone-name {
     font-size:20px;
-    color: azure;
+    color: inherit;
 }
 
 .timezone-info {
     display: flex;
+    color: azure;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
