@@ -18,79 +18,100 @@ const timezonesList = [
   
   const timezoneCardColorsList = [
     {
-      color: '#120d29'
+      color: '#120d29',
+      white: true
     },
     {
-      color: '#120d29'
+      color: '#071117',
+      white: true
     },
     {
-      color: '#071117'
+      color: '#060d1a',
+      white: true
     },
     {
-      color: '#060d1a'
+      color: '#061021',
+      white: true
     },
     {
-      color: '#061021'
+      color: '#0e1f33',
+      white: true
     },
     {
-      color: '#0e1f33'
+      color: '#2d5863',
+      white: true
     },
     {
-      color: '#2d5863'
+      color: '#2f8991',
+      white: true
     },
     {
-      color: '#2f8991'
+      color: '#70b8ba',
+      white: true
     },
     {
-      color: '#70b8ba'
+      color: '#a3ccc0',
+      white: true
     },
     {
-      color: '#a3ccc0'
+      color: '#cedbc5',
+      white: false
     },
     {
-      color: '#cedbc5'
+      color: '#edeabb',
+      white: false
     },
     {
-      color: '#edeabb'
+      color: '#f5e695',
+      white: false
     },
     {
-      color: '#f5e695'
+      color: '#f7e58b',
+      white: false
     },
     {
-      color: '#f7e58b'
+      color: '#f7cf77',
+      white: false
     },
     {
-      color: '#f7cf77'
+      color: '#f7c383',
+      white: false
     },
     {
-      color: '#f7c383'
+      color: '#f0a46e',
+      white: false
     },
     {
-      color: '#f0a46e'
+      color: '#cc8672',
+      white: true
     },
     {
-      color: '#cc8672'
+      color: '#996778',
+      white: true
     },
     {
-      color: '#996778'
+      color: '#69497a',
+      white: true
     },
     {
-      color: '#69497a'
+      color: '#55406e',
+      white: true
     },
     {
-      color: '#55406e'
+      color: '#1b0f38',
+      white: true
     },
     {
-      color: '#1b0f38'
+      color: '#13082e',
+      white: true
     },
     {
-      color: '#13082e'
+      color: '#110c2b',
+      white: true
     },
     {
-      color: '#110c2b'
-    },
-    {
-      color: '#16112e'
+      color: '#16112e',
+      white: true
     }
   ];
   
