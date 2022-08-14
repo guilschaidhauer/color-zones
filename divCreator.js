@@ -13,7 +13,7 @@ function createInfoDiv() {
     infoDiv.append(createTimeDiv());
     infoDiv.append(createDateDiv());
     infoDiv.append(createTimezoneNameDiv());
-    infoDiv.append(createDeleteButtonDiv());
+    infoDiv.append(createDeleteButton());
 
     infoDiv.classList.add("timezone-info");
     return infoDiv;
@@ -72,12 +72,6 @@ function createTimezoneNameParagraph() {
     paragraph.innerHTML = formatTimezoneName(timezoneCards[timezoneCards.length-1].timezoneName);
     paragraph.classList.add("timezone-name");
     return paragraph;
-}
-
-function createDeleteButtonDiv() {
-    const deleteButtonDiv = document.createElement("div");
-    deleteButtonDiv.append(createDeleteButton());
-    return deleteButtonDiv;
 }
 
 function createDeleteButton() {
