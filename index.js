@@ -31,10 +31,29 @@ function refreshTimeForCard(timezoneCard) {
     const hoursString = getHoursString(date);
     const minutesString = getMinutesString(date);
 
-    timezoneCard.style.backgroundColor = timezoneCardColorsList[hoursString - 1];
+    const colorIndex = getColorIndex(hoursString);
+    const colorObject = timezoneCardColorsList[colorIndex];
+
+    if (colorObject.white) {
+        timezoneCard.childNodes[0].classList.replace("timezone-info-dark", "timezone-info");
+    } else {
+        timezoneCard.childNodes[0].classList.add("timezone-info", "timezone-info-dark");
+    }
+
+    timezoneCard.style.backgroundColor = colorObject.color;
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
+}
+
+function getColorIndex(hoursString) {
+    let colorIndex = hoursString - 1;
+
+    if (colorIndex === -1) {
+        colorIndex = 23;
+    }
+
+    return colorIndex;
 }
 
 function getHoursDiv(div) {
@@ -63,7 +82,7 @@ function createTimezoneCard(timezoneName) {
 }
 
 function removeTimeZoneCard(button) {
-    const timezoneCard = button.parentElement.parentElement.parentElement;
+    const timezoneCard = button.parentElement.parentElement;
 
     for(var i=0; i<timezoneCards.length; i++){ 
         if (timezoneCards[i] === timezoneCard) { 
