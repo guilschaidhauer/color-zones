@@ -27,7 +27,7 @@ function getHoursString(date) {
 }
 
 function getMinutesString(date) {
-    return date.toLocaleTimeString("pt-BR", {minute: '2-digit'});
+    return formatMinutesString(date.toLocaleTimeString("pt-BR", {minute: '2-digit'}));
 }
 
 function getTimezoneString() {
