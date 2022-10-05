@@ -1,19 +1,38 @@
 const timezonesList = [
-    'Asia/Tokyo',
-    'Asia/Shanghai',
-    'Asia/Hong_Kong',
-    'Asia/Seoul',
+    {
+        id: 'Asia/Tokyo',
+        name: 'Tokyo'
+    },
+    {
+        id: 'Asia/Shanghai',
+        name: 'Shanghai'
+    },
+    {
+        id: 'Asia/Hong_Kong',
+        name: 'Hong Kong'
+    },
+    {
+        id: 'Asia/Seoul',
+        name: 'Seoul'
+    },
+
+    {
+        id: 'Europe/Berlin',
+        name: 'Berlin'
+    },
+    {
+        id: 'Europe/London',
+        name: 'London'
+    },
+    {
+        id: 'Europe/Rome',
+        name: 'Rome'
+    },
   
-    'Europe/Berlin',
-    'Europe/Madrid',
-    'Europe/Paris',
-    'Europe/London',
-    'Europe/Budapest',
-    'Europe/Dublin',
-    'Europe/Rome',
-  
-    'America/Sao_Paulo',
-    'America/Argentina/Buenos_Aires'
+    {
+        id: 'America/Sao_Paulo',
+        name: 'São Paulo'
+    }
 ];
   
 const timezoneCardColorsList = [
@@ -117,12 +136,15 @@ const timezoneCardColorsList = [
   
 initializeTimezoneList();
   
+// Maybe use a map for the names?
+// https://www.w3schools.com/js/js_object_maps.asp
+
 function initializeTimezoneList() {
     let timezonesSelect = document.getElementById("timezonesSelect");
   
     for (let i=0; i<timezonesList.length; i++) {
         let option = document.createElement("option");
-        option.text = timezonesList[i];
+        option.text = timezonesList[i].id;
         timezonesSelect.add(option);
     }
 }
