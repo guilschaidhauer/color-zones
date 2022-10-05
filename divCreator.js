@@ -69,7 +69,7 @@ function createTimezoneNameDiv() {
 
 function createTimezoneNameParagraph() {
     const paragraph = document.createElement("p");
-    paragraph.innerHTML = formatTimezoneName(timezoneCards[timezoneCards.length-1].timezoneName);
+    paragraph.innerHTML = timezoneList.get(timezoneCards[timezoneCards.length-1].timezoneName);
     paragraph.classList.add("timezone-name");
     return paragraph;
 }
