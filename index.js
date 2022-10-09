@@ -122,24 +122,3 @@ addEventListener('wheel', (event) => {
         addTimeOffset(-3600);
     }
 });
-
-function addTimeOffset(offsetInSeconds) {
-    isLiveTime = false;
-    wheelIsFree = false;
-
-    timeOffsetInSeconds += offsetInSeconds;
-
-    refreshTimeForAllCards();
-    setTimeout(function() { 
-        wheelIsFree = true; 
-    }, 250);
-
-    timeResetButton.style.display = "grid";
-}
-
-function resetTime() {
-    timeOffsetInSeconds = 0;
-    isLiveTime = true;
-    timeResetButton.style.display = "none";
-    refreshTime();
-} 
