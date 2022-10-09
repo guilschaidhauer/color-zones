@@ -30,6 +30,38 @@ function isValidHour(hour) {
     return (hour >= 0 && hour <= 23);
 }
 
+function handleMinutesClick() {
+    this.style.display = "none";
+    this.minutesInputDiv.style.display = "inline-block";
+    this.minutesInputDiv.minutesDiv = this;
+
+    this.minutesInputDiv.placeholder = this.innerHTML;
+}
+
+function handleMinutesInputBlur() {
+    this.style.display = "none";
+    this.minutesDiv.style.display = "inline-block";
+    
+    if (isValidMinutes(this.value)) {
+        updateMinutes(this);
+    } else {
+        this.placeholder = this.minuteDiv.innerHTML;
+    }
+}
+
+function updateMinutes(div) {
+    const newMinutes = div.value;
+    const previousMinutes = div.minutesDiv.innerHTML;
+
+    const minutesOffset = newMinutes - previousMinutes;
+
+    addTimeOffset(minutesOffset * 60);
+}
+
+function isValidMinutes(minute) {
+    return (minute >= 0 && minute <= 59);
+}
+
 function addTimeOffset(offsetInSeconds) {
     isLiveTime = false;
     wheelIsFree = false;

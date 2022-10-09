@@ -78,6 +78,22 @@ body {
     display: inline-block;
 }
 
+.minutes-input {
+    display: none;
+    font-size: 40px;
+    color: #4b4b4b;
+    background-color: inherit;
+    font-family:Verdana, Geneva, sans-serif;
+    text-align: end;
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    width: 58px;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
 .colon {
     font-size:40px;
     color: inherit;

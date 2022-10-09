@@ -28,7 +28,12 @@ function createTimeDiv() {
 
     timeDiv.append(createHoursDiv(hoursInputDiv));
     timeDiv.append(createColonDiv());
-    timeDiv.append(createMinutesDiv());
+
+    const minutesInputDiv = createMinutesInputDiv();
+    timeDiv.append(minutesInputDiv);
+
+    timeDiv.append(createMinutesDiv(minutesInputDiv));
+
     return timeDiv;
 }
 
@@ -48,10 +53,20 @@ function createHoursInputDiv() {
     return hoursInputDiv;
 }
 
-function createMinutesDiv() {
+function createMinutesDiv(minutesInputDiv) {
     const minutesDiv = document.createElement("div");
     minutesDiv.classList.add("minutes");
+    minutesDiv.onclick = handleMinutesClick;
+    minutesDiv.minutesInputDiv = minutesInputDiv;
     return minutesDiv;
+}
+
+function createMinutesInputDiv() {
+    const minutesInputDiv = document.createElement("textarea");
+    minutesInputDiv.classList.add("minutes-input");
+    minutesInputDiv.maxLength = 2;
+    minutesInputDiv.onblur = handleMinutesInputBlur; 
+    return minutesInputDiv;
 }
 
 function createColonDiv() {
