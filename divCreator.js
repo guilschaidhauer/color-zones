@@ -22,16 +22,40 @@ function createInfoDiv() {
 function createTimeDiv() {
     const timeDiv = document.createElement("div");
     timeDiv.classList.add("time-div");
-    timeDiv.append(createHoursDiv());
+
+    const hoursInputDiv = createHoursInputDiv();
+    timeDiv.append(hoursInputDiv);
+
+    timeDiv.append(createHoursDiv(hoursInputDiv));
     timeDiv.append(createColonDiv());
     timeDiv.append(createMinutesDiv());
     return timeDiv;
 }
 
-function createHoursDiv() {
+function createHoursDiv(hoursInputDiv) {
     const hoursDiv = document.createElement("div");
     hoursDiv.classList.add("hours");
+    hoursDiv.onclick = handleHoursClick;
+    hoursDiv.hoursInputDiv = hoursInputDiv;
     return hoursDiv;
+}
+
+function createHoursInputDiv() {
+    const hoursInputDiv = document.createElement("textarea");
+    hoursInputDiv.classList.add("hours-input");
+    hoursInputDiv.onblur = handleHoursInputBlur; 
+    return hoursInputDiv;
+}
+
+function handleHoursClick() {
+    this.style.display = "none";
+    this.hoursInputDiv.style.display = "inline-block";
+    this.hoursInputDiv.hoursDiv = this;
+}
+
+function handleHoursInputBlur() {
+    this.style.display = "none";
+    this.hoursDiv.style.display = "inline-block";
 }
 
 function createMinutesDiv() {

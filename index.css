@@ -44,15 +44,29 @@ body {
 }
 
 .date {
-    font-size:20px;
+    font-size: 20px;
     color: inherit;
 }
 
 .hours {
-    font-size:40px;
+    font-size: 40px;
     font-weight: bold;
     color: inherit;
     display: inline-block;
+}
+
+.hours-input {
+    display: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: inherit;
+    padding: 0px;
+    margin: 0px;
+    height: 46px;
+    width: 49px;
+    resize: none;
+    border: none;
+    outline: none;
 }
 
 .minutes {
