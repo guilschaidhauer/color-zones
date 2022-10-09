@@ -22,22 +22,51 @@ function createInfoDiv() {
 function createTimeDiv() {
     const timeDiv = document.createElement("div");
     timeDiv.classList.add("time-div");
-    timeDiv.append(createHoursDiv());
+
+    const hoursInputDiv = createHoursInputDiv();
+    timeDiv.append(hoursInputDiv);
+
+    timeDiv.append(createHoursDiv(hoursInputDiv));
     timeDiv.append(createColonDiv());
-    timeDiv.append(createMinutesDiv());
+
+    const minutesInputDiv = createMinutesInputDiv();
+    timeDiv.append(minutesInputDiv);
+
+    timeDiv.append(createMinutesDiv(minutesInputDiv));
+
     return timeDiv;
 }
 
-function createHoursDiv() {
+function createHoursDiv(hoursInputDiv) {
     const hoursDiv = document.createElement("div");
     hoursDiv.classList.add("hours");
+    hoursDiv.onclick = handleHoursClick;
+    hoursDiv.hoursInputDiv = hoursInputDiv;
     return hoursDiv;
 }
 
-function createMinutesDiv() {
+function createHoursInputDiv() {
+    const hoursInputDiv = document.createElement("textarea");
+    hoursInputDiv.classList.add("hours-input");
+    hoursInputDiv.maxLength = 2;
+    hoursInputDiv.onblur = handleHoursInputBlur; 
+    return hoursInputDiv;
+}
+
+function createMinutesDiv(minutesInputDiv) {
     const minutesDiv = document.createElement("div");
     minutesDiv.classList.add("minutes");
+    minutesDiv.onclick = handleMinutesClick;
+    minutesDiv.minutesInputDiv = minutesInputDiv;
     return minutesDiv;
+}
+
+function createMinutesInputDiv() {
+    const minutesInputDiv = document.createElement("textarea");
+    minutesInputDiv.classList.add("minutes-input");
+    minutesInputDiv.maxLength = 2;
+    minutesInputDiv.onblur = handleMinutesInputBlur; 
+    return minutesInputDiv;
 }
 
 function createColonDiv() {
@@ -69,7 +98,7 @@ function createTimezoneNameDiv() {
 
 function createTimezoneNameParagraph() {
     const paragraph = document.createElement("p");
-    paragraph.innerHTML = formatTimezoneName(timezoneCards[timezoneCards.length-1].timezoneName);
+    paragraph.innerHTML = timezoneList.get(timezoneCards[timezoneCards.length-1].timezoneName);
     paragraph.classList.add("timezone-name");
     return paragraph;
 }

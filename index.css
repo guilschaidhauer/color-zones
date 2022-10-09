@@ -44,21 +44,54 @@ body {
 }
 
 .date {
-    font-size:20px;
+    font-size: 20px;
     color: inherit;
 }
 
 .hours {
-    font-size:40px;
+    font-size: 40px;
     font-weight: bold;
     color: inherit;
     display: inline-block;
+}
+
+.hours-input {
+    display: none;
+    font-size: 40px;
+    color: #4b4b4b;
+    background-color: inherit;
+    font-family:Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: end;
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    width: 58px;
+    resize: none;
+    border: none;
+    outline: none;
 }
 
 .minutes {
     font-size:40px;
     color: inherit;
     display: inline-block;
+}
+
+.minutes-input {
+    display: none;
+    font-size: 40px;
+    color: #4b4b4b;
+    background-color: inherit;
+    font-family:Verdana, Geneva, sans-serif;
+    text-align: end;
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    width: 58px;
+    resize: none;
+    border: none;
+    outline: none;
 }
 
 .colon {
