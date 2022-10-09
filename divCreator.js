@@ -43,6 +43,7 @@ function createHoursDiv(hoursInputDiv) {
 function createHoursInputDiv() {
     const hoursInputDiv = document.createElement("textarea");
     hoursInputDiv.classList.add("hours-input");
+    hoursInputDiv.maxLength = 2;
     hoursInputDiv.onblur = handleHoursInputBlur; 
     return hoursInputDiv;
 }
@@ -51,6 +52,8 @@ function handleHoursClick() {
     this.style.display = "none";
     this.hoursInputDiv.style.display = "inline-block";
     this.hoursInputDiv.hoursDiv = this;
+
+    this.hoursInputDiv.placeholder = this.innerHTML;
 }
 
 function handleHoursInputBlur() {

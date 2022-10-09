@@ -58,12 +58,15 @@ body {
 .hours-input {
     display: none;
     font-size: 40px;
+    color: #4b4b4b;
+    background-color: inherit;
+    font-family:Verdana, Geneva, sans-serif;
     font-weight: bold;
-    color: inherit;
+    text-align: end;
     padding: 0px;
     margin: 0px;
-    height: 46px;
-    width: 49px;
+    height: 40px;
+    width: 58px;
     resize: none;
     border: none;
     outline: none;
