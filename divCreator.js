@@ -59,7 +59,12 @@ function handleHoursClick() {
 function handleHoursInputBlur() {
     this.style.display = "none";
     this.hoursDiv.style.display = "inline-block";
-    updateHours(this);
+    
+    if (isValidHour(this.value)) {
+        updateHours(this);
+    } else {
+        this.placeholder = this.hoursDiv.innerHTML;
+    }
 }
 
 function updateHours(div) {
@@ -69,6 +74,10 @@ function updateHours(div) {
     const hoursOffset = newHour - previousHour;
 
     addTimeOffset(hoursOffset * 60 * 60);
+}
+
+function isValidHour(hour) {
+    return (hour >= 0 && hour <= 23);
 }
 
 function createMinutesDiv() {
