@@ -123,6 +123,16 @@ body {
     justify-content: center;
 }
 
+.timezone-info-selected {
+    display: flex;
+    color: #393f3f;
+    background: azure;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
 .float {
 	position: absolute;
     top: 20px;

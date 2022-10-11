@@ -16,6 +16,9 @@ function createInfoDiv() {
     infoDiv.append(createDeleteButton());
 
     infoDiv.classList.add("timezone-info");
+    infoDiv.onmouseover = handleOnTimezoneInfoMouseOver;
+    infoDiv.onmouseleave = handleOnTimezoneInfoMouseOut;
+    infoDiv.isSelected = false;
     return infoDiv;
 }
 
