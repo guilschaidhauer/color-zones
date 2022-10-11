@@ -27,7 +27,7 @@ function updateHours(div) {
 }
 
 function isValidHour(hour) {
-    return (hour >= 0 && hour <= 23);
+    return (hour >= 0 && hour <= 23 && hour != '');
 }
 
 function handleMinutesClick() {
@@ -59,7 +59,7 @@ function updateMinutes(div) {
 }
 
 function isValidMinutes(minute) {
-    return (minute >= 0 && minute <= 59);
+    return (minute >= 0 && minute <= 59 && minute != '');
 }
 
 function addTimeOffset(offsetInSeconds) {
