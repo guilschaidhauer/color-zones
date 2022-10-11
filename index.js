@@ -44,6 +44,7 @@ function refreshTimeForCard(timezoneCard) {
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
+    getDateDiv(timezoneCard).innerHTML = getDateString(timezoneCard.timezoneName);
 }
 
 function getColorIndex(hoursString) {
@@ -62,6 +63,10 @@ function getHoursDiv(div) {
 
 function getMinutesDiv(div) {
     return div.querySelector(".minutes");
+}
+
+function getDateDiv(div) {
+    return div.querySelector(".date");
 }
 
 function addTimezoneCard() {
