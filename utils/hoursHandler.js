@@ -4,6 +4,7 @@ function handleHoursClick() {
     this.hoursInputDiv.hoursDiv = this;
 
     this.hoursInputDiv.placeholder = this.innerHTML;
+    this.hoursInputDiv.focus();
 }
 
 function handleHoursInputBlur() {
@@ -36,6 +37,7 @@ function handleMinutesClick() {
     this.minutesInputDiv.minutesDiv = this;
 
     this.minutesInputDiv.placeholder = this.innerHTML;
+    this.minutesInputDiv.focus();
 }
 
 function handleMinutesInputBlur() {
