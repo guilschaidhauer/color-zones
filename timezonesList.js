@@ -1,10 +1,13 @@
 const timezoneList = new Map([
     ['Asia/Tokyo','Tokyo'],
-    ['Asia/Shanghai','Shanghai'],
+    ['Asia/Shanghai','Beijing'],
+    ['Asia/Kolkata','Bangalore'],
     ['Europe/Berlin','Berlin'],
     ['Europe/London','London'],
-    ['Europe/Rome','Rome'],
+    ['Europe/Rome','Udine'],
     ['America/Sao_Paulo','São Paulo'],
+    ['America/New_York','New York'],
+    ['America/Los_Angeles','Los Angeles']
   ]);
   
 const timezoneCardColorsList = [

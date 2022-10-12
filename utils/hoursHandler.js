@@ -4,6 +4,7 @@ function handleHoursClick() {
     this.hoursInputDiv.hoursDiv = this;
 
     this.hoursInputDiv.placeholder = this.innerHTML;
+    this.hoursInputDiv.focus();
 }
 
 function handleHoursInputBlur() {
@@ -27,7 +28,7 @@ function updateHours(div) {
 }
 
 function isValidHour(hour) {
-    return (hour >= 0 && hour <= 23);
+    return (hour >= 0 && hour <= 23 && hour != '');
 }
 
 function handleMinutesClick() {
@@ -36,6 +37,7 @@ function handleMinutesClick() {
     this.minutesInputDiv.minutesDiv = this;
 
     this.minutesInputDiv.placeholder = this.innerHTML;
+    this.minutesInputDiv.focus();
 }
 
 function handleMinutesInputBlur() {
@@ -59,7 +61,7 @@ function updateMinutes(div) {
 }
 
 function isValidMinutes(minute) {
-    return (minute >= 0 && minute <= 59);
+    return (minute >= 0 && minute <= 59 && minute != '');
 }
 
 function addTimeOffset(offsetInSeconds) {

@@ -34,16 +34,24 @@ function refreshTimeForCard(timezoneCard) {
     const colorIndex = getColorIndex(hoursString);
     const colorObject = timezoneCardColorsList[colorIndex];
 
-    if (colorObject.white) {
-        timezoneCard.childNodes[0].classList.replace("timezone-info-dark", "timezone-info");
-    } else {
-        timezoneCard.childNodes[0].classList.add("timezone-info", "timezone-info-dark");
-    }
-
-    timezoneCard.style.backgroundColor = colorObject.color;
+    updateTimezoneCardColor(timezoneCard, colorObject);
 
     getHoursDiv(timezoneCard).innerHTML = hoursString;
     getMinutesDiv(timezoneCard).innerHTML = minutesString;
+    getDateDiv(timezoneCard).innerHTML = getDateString(timezoneCard.timezoneName);
+}
+
+function updateTimezoneCardColor(timezoneCard, colorObject) {
+    const timezoneCardInfo =  timezoneCard.childNodes[0];
+
+    if (!timezoneCardInfo.isSelected) {
+        if (colorObject.white) {
+            timezoneCardInfo.className = "timezone-info";
+        } else {
+            timezoneCardInfo.className = "timezone-info-dark";
+        }
+        timezoneCard.style.backgroundColor = colorObject.color;
+    }
 }
 
 function getColorIndex(hoursString) {
@@ -62,6 +70,10 @@ function getHoursDiv(div) {
 
 function getMinutesDiv(div) {
     return div.querySelector(".minutes");
+}
+
+function getDateDiv(div) {
+    return div.querySelector(".date");
 }
 
 function addTimezoneCard() {
@@ -113,6 +125,23 @@ function openForm() {
 function closeForm() {
     document.getElementById("addTimezoneButton").style.display = "block";
     document.getElementById("myForm").style.display = "none";
+}
+
+function handleOnTimezoneInfoMouseOver() {
+    if (!this.isSelected) {
+        this.isSelected = true;
+        this.previousClass = this.classList[0];
+        this.className = "timezone-info-selected";
+        this.deleteButton.style.visibility = "visible";
+    }
+}
+
+function handleOnTimezoneInfoMouseOut() {
+    if (this.isSelected) {
+        this.isSelected = false;
+        this.className = this.previousClass;
+        this.deleteButton.style.visibility = "hidden";
+    }
 }
 
 addEventListener('wheel', (event) => {

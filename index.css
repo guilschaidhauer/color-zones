@@ -123,6 +123,20 @@ body {
     justify-content: center;
 }
 
+.timezone-info-selected {
+    display: flex;
+    color: #393f3f;
+    background: azure;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
 .float {
 	position: absolute;
     top: 20px;
@@ -138,7 +152,6 @@ body {
 }
 
 .remove-button {
-    position: absolute;
     bottom: 20px;
 	background-color:rgba(240, 255, 255, 0.496);
 	color:#BD80EB;
