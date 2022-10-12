@@ -13,8 +13,12 @@ function createInfoDiv() {
     infoDiv.append(createTimeDiv());
     infoDiv.append(createDateDiv());
     infoDiv.append(createTimezoneNameDiv());
-    infoDiv.append(createDeleteButton());
 
+    const deleteButton = createDeleteButton();
+    infoDiv.append(deleteButton);
+    infoDiv.deleteButton = deleteButton;
+    infoDiv.deleteButton.style.visibility = "hidden";
+    
     infoDiv.classList.add("timezone-info");
     infoDiv.onmouseover = handleOnTimezoneInfoMouseOver;
     infoDiv.onmouseleave = handleOnTimezoneInfoMouseOut;
