@@ -1,10 +1,10 @@
 const timezoneList = new Map([
     ['Asia/Tokyo','Tokyo'],
-    ['Asia/Shanghai','Beijing'],
-    ['Asia/Kolkata','Bangalore'],
+    ['Asia/Shanghai','Shanghai'],
+    ['Asia/Kolkata','Kolkata'],
     ['Europe/Berlin','Berlin'],
     ['Europe/London','London'],
-    ['Europe/Rome','Udine'],
+    ['Europe/Rome','Rome'],
     ['America/Sao_Paulo','São Paulo'],
     ['America/New_York','New York'],
     ['America/Los_Angeles','Los Angeles']
