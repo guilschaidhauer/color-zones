@@ -119,7 +119,7 @@ function getTimezoneCardWidth() {
 
 function openForm() {
     document.getElementById("addTimezoneButton").style.display = "none";
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("myForm").style.display = "flex";
 }
 
 function closeForm() {
