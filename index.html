@@ -10,7 +10,9 @@
         <div class="cards-holder" id="timezonesCardHolder">
         </div>
 
-        <div class="form-popup" id="myForm">
+        <button class="float" onclick="openForm()" id="addTimezoneButton">+</button>
+
+        <div id="myForm" class="form-popup">
             <form class="form-container">
                 <label for="timezones">Choose a timezone:</label>
                 <select name="timezones" id="timezonesSelect">
@@ -20,8 +22,6 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
             </form>
         </div>
-
-        <button class="float" onclick="openForm()" id="addTimezoneButton">+</button>
 
         <div id="timeResetButton" class="reset-time">
             <button class="reset-time-button" onclick="resetTime()">Reset time</button>
