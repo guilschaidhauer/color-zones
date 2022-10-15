@@ -148,13 +148,21 @@ body {
 }
 
 .colon {
-    font-size:40px;
+    font-size: 35px;
     color: inherit;
     display: inline-block;
+    transition: .5s;
+}
+
+.colon-off {
+    font-size: 35px;
+    opacity: 0;
+    display: inline-block;
+    transition: .5s;
 }
 
 .timezone-name {
-    font-size:20px;
+    font-size: 20px;
     color: inherit;
 }
 
