@@ -11,7 +11,7 @@
 
 .form-container {
     padding: 40px;
-    background-color: azure;
+    background-color: rgba(240, 255, 255, 0.60);
     width: 55%;
 }
 
@@ -197,8 +197,8 @@ body {
     left: 20px;
 	width:60px;
 	height:60px;
-	background-color:azure;
-	color:#BD80EB;
+	background-color:rgba(240, 255, 255, 0.60);
+	color:#393f3f;
     border: none;
 	border-radius:50px;
 	text-align:center;
@@ -207,8 +207,8 @@ body {
 
 .remove-button {
     bottom: 20px;
-	background-color:rgba(240, 255, 255, 0.496);
-	color:#BD80EB;
+	background-color:rgba(240, 255, 255, 0);
+	color:#393f3f;
     border: none;
 	border-radius: 20px;
 	text-align: center;
@@ -231,8 +231,8 @@ body {
 }
 
 .reset-time-button {
-    background-color:azure;
-    color:#BD80EB;
+    background-color:rgba(240, 255, 255, 0.60);
+    color: #393f3f;
     font-size: 20px;
     padding: 20px;
     border: none;
