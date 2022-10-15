@@ -163,6 +163,7 @@ body {
     justify-content: space-between;
     align-items: center;
     justify-content: center;
+    transition: .5s;
 }
 
 .timezone-info-dark {
@@ -172,12 +173,13 @@ body {
     justify-content: space-between;
     align-items: center;
     justify-content: center;
+    transition: .5s;
 }
 
 .timezone-info-selected {
     display: flex;
     color: #393f3f;
-    background: azure;
+    background: rgba(240, 255, 255, 0.60);
     padding-top: 5%;
     padding-bottom: 5%;
     padding-left: 15%;
@@ -186,6 +188,7 @@ body {
     justify-content: space-between;
     align-items: center;
     justify-content: center;
+    transition: .5s;
 }
 
 .float {
