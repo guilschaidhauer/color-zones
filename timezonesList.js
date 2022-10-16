@@ -116,7 +116,7 @@ function initializeTimezoneList() {
   
     timezoneList.forEach (function(value, key) {
         let option = document.createElement("option");
-        option.text = key;
-        timezonesSelect.add(option);
-    })
+        option.value = key;
+        timezonesSelect.appendChild(option);
+    });
 }
