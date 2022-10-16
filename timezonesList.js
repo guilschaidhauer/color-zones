@@ -116,7 +116,15 @@ function initializeTimezoneList() {
   
     timezoneList.forEach (function(value, key) {
         let option = document.createElement("option");
-        option.value = key;
+        option.value = value;
+        option.key = key;
         timezonesSelect.appendChild(option);
     });
+}
+
+function getTimezoneByValue(searchValue) {
+    for (let [key, value] of timezoneList.entries()) {
+      if (value === searchValue)
+        return key;
+    }
 }

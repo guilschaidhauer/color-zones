@@ -31,7 +31,9 @@ function getMinutesString(date) {
 }
 
 function getTimezoneString() {
-    return document.getElementById("timezonesSelect").value;
+    const timezoneInput = document.getElementById("timezoneInput");
+
+    return getTimezoneByValue(timezoneInput.value);
 }
 
 function getDateString(timezoneName) {
