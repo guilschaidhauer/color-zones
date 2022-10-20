@@ -1,12 +1,42 @@
-/* The popup form - hidden by default */
+.new-timezone-button {
+    visibility: visible;
+    opacity: 1;
+	position: absolute;
+    top: 20px;
+    right: 20px;
+	width:60px;
+	height:60px;
+	background-color:rgba(240, 255, 255, 0.60);
+	color:#393f3f;
+    border: none;
+	border-radius:50px;
+	text-align:center;
+    font-size: 50px;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.new-timezone-button-off {
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
 .form-popup {
-    display: none;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
     position: absolute;
     vertical-align: baseline;
     width: 100%;
     top: 20px;
     align-items: center;
     justify-content: center;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.form-popup-off {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
 }
 
 .form-container {
@@ -225,20 +255,6 @@ body {
     align-items: center;
     justify-content: center;
     transition: .5s;
-}
-
-.float {
-	position: absolute;
-    top: 20px;
-    right: 20px;
-	width:60px;
-	height:60px;
-	background-color:rgba(240, 255, 255, 0.60);
-	color:#393f3f;
-    border: none;
-	border-radius:50px;
-	text-align:center;
-    font-size: 50px;
 }
 
 .remove-button {
