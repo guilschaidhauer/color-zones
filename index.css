@@ -10,9 +10,9 @@
 }
 
 .form-container {
-    padding: 40px;
-    background-color: rgba(240, 255, 255, 0.60);
-    width: 55%;
+    padding: 20px;
+    background-color: rgba(240, 255, 255, 0.9);
+    width: 50%;
 }
 
 .form {
@@ -23,12 +23,20 @@
     color: #393f3f;
 }
 
+.timezone-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .timezone-select-label {
     font-size: 20px;
+    color: #393f3f;
+    font-weight: bold;
     margin: 5px;
 }
 
-.select {
+.timezone-input {
     width: 100%;
     min-width: 15ch;
     max-width: 30ch;
