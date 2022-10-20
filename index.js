@@ -2,6 +2,10 @@ let timeDisplay = document.getElementById("time");
 
 let timezoneCards = [];
 
+let colonsArray = [];
+
+let colonAreVisible = true;
+
 let isLiveTime = true;
 
 let wheelIsFree = true;
@@ -18,6 +22,20 @@ function refreshTime() {
     if (isLiveTime) {
         refreshTimeForAllCards();
     }
+
+    toggleColons();
+}
+
+function toggleColons() {
+    colonsArray.forEach(colon => {
+        if (colonAreVisible) {
+            colon.className = "colon-off";
+        } else {
+            colon.className = "colon";
+        }
+    });
+
+    colonAreVisible = !colonAreVisible;
 }
 
 function refreshTimeForAllCards() {
@@ -118,13 +136,13 @@ function getTimezoneCardWidth() {
 }
 
 function openForm() {
-    document.getElementById("addTimezoneButton").style.display = "none";
-    document.getElementById("myForm").style.display = "flex";
+    document.getElementById("addTimezoneButton").className = "new-timezone-button-off";
+    document.getElementById("myForm").className = "form-popup";
 }
 
 function closeForm() {
-    document.getElementById("addTimezoneButton").style.display = "block";
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("addTimezoneButton").className = "new-timezone-button";
+    document.getElementById("myForm").className = "form-popup-off";
 }
 
 function handleOnTimezoneInfoMouseOver() {
@@ -132,7 +150,7 @@ function handleOnTimezoneInfoMouseOver() {
         this.isSelected = true;
         this.previousClass = this.classList[0];
         this.className = "timezone-info-selected";
-        this.deleteButton.style.visibility = "visible";
+        this.deleteButton.className = "remove-button";
     }
 }
 
@@ -140,7 +158,7 @@ function handleOnTimezoneInfoMouseOut() {
     if (this.isSelected) {
         this.isSelected = false;
         this.className = this.previousClass;
-        this.deleteButton.style.visibility = "hidden";
+        this.deleteButton.className = "remove-button-off";
     }
 }
 
