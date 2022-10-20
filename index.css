@@ -37,13 +37,14 @@
 }
 
 .timezone-input {
-    width: 100%;
+    width: 60%;
     min-width: 15ch;
     max-width: 30ch;
     border: 1px solid var(--select-border);
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
-    font-size: 1.25rem;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size: 20px;
     cursor: pointer;
     line-height: 1.1;
     color: #393f3f;
