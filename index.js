@@ -150,7 +150,7 @@ function handleOnTimezoneInfoMouseOver() {
         this.isSelected = true;
         this.previousClass = this.classList[0];
         this.className = "timezone-info-selected";
-        this.deleteButton.style.visibility = "visible";
+        this.deleteButton.className = "remove-button";
     }
 }
 
@@ -158,7 +158,7 @@ function handleOnTimezoneInfoMouseOut() {
     if (this.isSelected) {
         this.isSelected = false;
         this.className = this.previousClass;
-        this.deleteButton.style.visibility = "hidden";
+        this.deleteButton.className = "remove-button-off";
     }
 }
 

@@ -267,6 +267,20 @@ body {
 	border-radius: 20px;
 	text-align: center;
     font-size: 20px;
+    transition: .5s;
+}
+
+.remove-button-off {
+    visibility: hidden;
+    opacity: 0;
+    bottom: 20px;
+	background-color:rgba(240, 255, 255, 0);
+	color:#393f3f;
+    border: none;
+	border-radius: 20px;
+	text-align: center;
+    font-size: 20px;
+    transition: visibility 0.5s, opacity 0.5s;
 }
 
 .reset-time {
