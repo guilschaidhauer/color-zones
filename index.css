@@ -177,14 +177,14 @@ body {
     font-size: 35px;
     color: inherit;
     display: inline-block;
-    transition: .5s;
+    transition: opacity .5s;
 }
 
 .colon-off {
     font-size: 35px;
     opacity: 0;
     display: inline-block;
-    transition: .5s;
+    transition: opacity .5s;
 }
 
 .timezone-name {
