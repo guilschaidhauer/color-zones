@@ -12,7 +12,7 @@
 .form-container {
     padding: 20px;
     background-color: rgba(240, 255, 255, 0.9);
-    width: 50%;
+    width: 35%;
 }
 
 .form {
@@ -60,10 +60,27 @@
 
 .add-button {
     margin: 5px;
+    background-color: #9ac49f; /* Green */
+    border: none;
+    color: #393f3f;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: bold;
 }
 
 .cancel-button {
     margin: 5px;
+    background-color: #b48083;
+    border: none;
+    color: #393f3f;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 body {
