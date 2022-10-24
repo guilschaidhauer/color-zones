@@ -39,11 +39,11 @@ const timezoneCardColorsList = [
         white: true
     },
     {
-        color: '#071117',
+        color: '#060d1a',
         white: true
     },
     {
-        color: '#060d1a',
+        color: '#071117',
         white: true
     },
     {
@@ -83,7 +83,7 @@ const timezoneCardColorsList = [
         white: false
     },
     {
-        color: '#f7e58b',
+        color: '#ebd980',
         white: false
     },
     {
