@@ -144,6 +144,9 @@ function openForm() {
 function closeForm() {
     document.getElementById("addTimezoneButton").className = "new-timezone-button";
     document.getElementById("myForm").className = "form-popup-off";
+    
+    const timezoneInput = document.getElementById("timezoneInput");
+    timezoneInput.value = "";
 }
 
 function handleOnTimezoneInfoMouseOver() {
